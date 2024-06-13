@@ -1,0 +1,122 @@
+---
+title: Avatar
+description: Representation of entity
+---
+
+```tsx
+import { Avatar } from 'degen'
+```
+
+```tsx live=true expand=true
+<Avatar label="Noun 97" src={avatars.noun97} />
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Sizes
+
+```tsx live=true
+<Stack align="center" direction="horizontal" wrap>
+  <Avatar label="Noun 97" size="96px" src={avatars.noun97} />
+  <Avatar label="Noun 97" size="64px" src={avatars.noun97} />
+  <Avatar label="Noun 97" size="48px" src={avatars.noun97} />
+  <Avatar label="Noun 97" size="40px" src={avatars.noun97} />
+</Stack>
+```
+
+## Placeholder
+
+A placeholder can be shown by setting the `placeholder` prop to true. The color is determined by the (optional) `address` prompt. It will default to blue. The placeholder will also be shown if the `src` is invalid and can not be loaded.
+
+```tsx live=true expand=true
+<Stack align="center" direction="horizontal" wrap>
+  <Avatar address="0x62500C50fh999506597609B640F1D3672A0082Dc" placeholder />
+  <Avatar address="0x78Bddfs96cC5c0d6B506597609B64F1D999D82Dc" placeholder />
+  <Avatar address="0x625BBa96Cc5c0d6B506597609B64F1D3672D82Dc" placeholder />
+  <Avatar src="bad/url" />
+</Stack>
+```
+
+## Shapes
+
+```tsx live=true
+<Stack align="center" direction="horizontal" wrap>
+  <Avatar
+    label="Noun 97 circle"
+    shape="circle"
+    size="96px"
+    src={avatars.noun97}
+  />
+  <Avatar
+    label="Noun 97 square"
+    shape="square"
+    size="96px"
+    src={avatars.noun97}
+  />
+</Stack>
+```
+
+## Border
+
+By default, there is a light border around the edge to define image edges on similarly colored backgrounds. This can be disabled by using the `noBorder` prop.
+
+```tsx live=true
+<Stack direction="horizontal">
+  <Avatar
+    size="96px"
+    src={
+      mode === 'light'
+        ? 'https://images.mirror-media.xyz/publication-images/152cd86f-45ad-4f48-8971-4dd33fde5bc1.png'
+        : 'https://images.mirror-media.xyz/publication-images/5eaba6b2-b9ee-4bea-aeac-75796d53798f.jpg'
+    }
+  />
+  <Avatar
+    noBorder
+    size="96px"
+    src={
+      mode === 'light'
+        ? 'https://images.mirror-media.xyz/publication-images/152cd86f-45ad-4f48-8971-4dd33fde5bc1.png'
+        : 'https://images.mirror-media.xyz/publication-images/5eaba6b2-b9ee-4bea-aeac-75796d53798f.jpg'
+    }
+  />
+</Stack>
+```
+
+## ENS Avatar Support
+
+You can supply a hook to resolve an ENS avatar from an address if your app interfaces with the ethereum network
+
+```tsx live=true
+<Stack direction="horizontal">
+  <Avatar
+    address="0xd8dA6BF26964aF9D7eEd9e03E53415D37aA97890"
+    ensAvatarHook={(address) => {
+      if (address === '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045') {
+        return 'https://ipfs.io/ipfs/QmSP4nq9fnN9dAiCj42ug9Wa79rqmQerZXZch82VqpiH7U/image.gif'
+      }
+    }}
+    label="Avatar"
+    size="96px"
+  />
+  <Avatar
+    address="0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"
+    ensAvatarHook={(address) => {
+      if (address === '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045') {
+        return 'https://ipfs.io/ipfs/QmSP4nq9fnN9dAiCj42ug9Wa79rqmQerZXZch82VqpiH7U/image.gif'
+      }
+    }}
+    label="Avatar"
+    size="96px"
+  />
+</Stack>
+```
+
+## next/image
+
+If you are using Next.js and configured [`next/image`](https://nextjs.org/docs/api-reference/next/image) appropriately, you can pass it in with the `as` prop.
+
+```tsx live=true expand=true
+<Avatar as={NextImage} label="Noun 97" src={avatars.noun97} />
+```

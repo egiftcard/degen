@@ -1,0 +1,85 @@
+---
+title: Tag
+description: Indicator with optional label.
+---
+
+```tsx
+import { Tag } from 'degen'
+```
+
+```tsx live=true expand=true
+<Tag>100 $WRITE</Tag>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Sizes
+
+```tsx live=true
+<Stack align="center" direction="horizontal">
+  <Tag size="medium">Medium</Tag>
+  <Tag size="small">Small</Tag>
+</Stack>
+```
+
+## Tones
+
+```tsx live=true
+<Stack align="center" direction="horizontal" wrap>
+  <Tag tone="primary">Primary</Tag>
+  <Tag tone="accent">Accent</Tag>
+  <Tag tone="secondary">Secondary</Tag>
+  <Tag tone="blue">Blue</Tag>
+  <Tag tone="green">Green</Tag>
+  <Tag tone="red">Red</Tag>
+  <Box
+    backgroundColor="foregroundTertiary"
+    borderRadius="extraLarge"
+    padding="8px"
+  >
+    <Tag tone="background">Background</Tag>
+  </Box>
+</Stack>
+```
+
+## Label
+
+```tsx live=true
+<Stack direction="vertical">
+  <Tag label="Sold Out">100/100</Tag>
+
+  <Tag label="Sold Out" size="small">
+    100/100
+  </Tag>
+</Stack>
+```
+
+## Hover
+
+```tsx live=true
+<Tag hover>Hover Me</Tag>
+```
+
+## Ellipses
+
+```tsx live=true
+<Tag>
+  Very very very long tag to show ellipses very very long tag to show ellipses
+  very very long tag to show ellipses very very long tag to show ellipses
+</Tag>
+```
+
+## Complex Tag children
+
+```tsx live=true
+<Tag>
+  <Avatar
+    address="0x62500C50fh999506597609B640F1D3672A0082Dc"
+    placeholder
+    size="16px"
+  />
+  Mirror Development
+</Tag>
+```

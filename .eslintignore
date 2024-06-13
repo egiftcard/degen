@@ -1,0 +1,8 @@
+docs/.next/
+
+components/dist/
+components/coverage/
+components/src/components/icons/generated/
+
+.yarn/*
+yarn.lock

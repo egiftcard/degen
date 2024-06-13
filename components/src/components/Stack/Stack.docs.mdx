@@ -1,0 +1,84 @@
+---
+title: Stack
+description: Layout for elements
+---
+
+```tsx
+import { Stack } from 'degen'
+```
+
+```tsx expand=true live=true
+<Stack>
+  <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+  <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+</Stack>
+```
+
+## Props
+
+<PropsTable sourceLink={sourceLink} types={types} />
+
+## Space
+
+```tsx live=true
+<Stack space="32px">
+  <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+  <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+  <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+</Stack>
+```
+
+## Direction
+
+```tsx live=true
+<Stack space="32px">
+  <Stack>
+    <Text variant="label">Vertical</Text>
+    <Stack>
+      <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+      <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+    </Stack>
+  </Stack>
+  <Stack>
+    <Text variant="label">Horizontal</Text>
+    <Stack direction="horizontal">
+      <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+      <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+    </Stack>
+  </Stack>
+</Stack>
+```
+
+## Align
+
+```tsx live=true
+<Stack align="center" direction="horizontal">
+  <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+  <Box backgroundColor="foregroundSecondary" height="128px" width="128px" />
+  <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+</Stack>
+```
+
+## Justify
+
+```tsx live=true
+<Stack direction="horizontal" justify="space-between">
+  <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+  <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+  <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+</Stack>
+```
+
+## Wrap
+
+```tsx live=true
+<Stack direction="horizontal" wrap>
+  <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+  <Box backgroundColor="foregroundSecondary" height="64px" width="256px" />
+  <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+  <Box backgroundColor="foregroundSecondary" height="64px" width="256px" />
+  <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+  <Box backgroundColor="foregroundSecondary" height="64px" width="256px" />
+  <Box backgroundColor="foregroundSecondary" height="64px" width="64px" />
+</Stack>
+```
